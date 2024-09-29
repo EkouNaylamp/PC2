@@ -1,0 +1,36 @@
+@model IEnumerable<PC2.Models.CuentaBancaria>
+
+<h1>Cuentas Bancarias</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Nombre del Titular</th>
+            <th>Tipo de Cuenta</th>
+            <th>Saldo Inicial</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null && Model.Any()) // Asegúrate de que hay cuentas para mostrar
+        {
+            foreach (var cuenta in Model)
+            {
+                <tr>
+                    <td>@cuenta.NombreTitular</td>
+                    <td>@cuenta.TipoCuenta</td>
+                    <td>@cuenta.SaldoInicial</td>
+                    <td>@cuenta.Email</td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="4">No hay cuentas bancarias registradas.</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Create">Crear Nueva Cuenta</a>

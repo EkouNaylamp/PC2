@@ -1,0 +1,23 @@
+@model PC2.Models.CuentaBancaria
+
+<h1>Crear Cuenta Bancaria</h1>
+
+<form asp-action="Create" method="post">
+    <div>
+        <label>Nombre del Titular</label>
+        <input asp-for="NombreTitular" class="form-control" />
+    </div>
+    <div>
+        <label>Tipo de Cuenta</label>
+        <input asp-for="TipoCuenta" class="form-control" />
+    </div>
+    <div>
+        <label>Saldo Inicial</label>
+        <input asp-for="SaldoInicial" type="number" step="0.01" class="form-control" />
+    </div>
+    <div>
+        <label>Email</label>
+        <input asp-for="Email" type="email" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Crear</button>
+</form>
